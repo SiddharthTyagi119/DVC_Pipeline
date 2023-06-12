@@ -16,16 +16,27 @@ dvc stage add -n train -p process.dir,process.train_file,process.test_file,base.
 
 dvc stage add -n evaluate -d src/evaluate.py -d model/model.pkl -d data/processed -M eval/live/metrics.json -O eval/live/plots -O eval/prc -o eval/importance.png python src/evaluate.py model/model.pkl data/processed
   
-  
+# To run whole pipeline
+dvc repro
+
+# To visualize the pipeline
 dvc remove data_split
+
 dvc remove data_processing
+
 dvc remove train
+
 dvc remove evaluate
 
 dvc metrics show
+
 dvc plots show
 
 dvc metrics diff
+
 dvc plots diff
+
+
+
 
 

@@ -46,10 +46,7 @@ stages:
     - src/evaluate.py
     outs:
     - eval/importance.png
-    - eval/live/plots:
-        cache: false
-    - eval/prc:
-        cache: false
+    - eval/live/plots
+    - eval/prc
     metrics:
-    - eval/live/metrics.json:
-        cache: false
+    - eval/live/metrics.json
